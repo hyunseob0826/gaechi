@@ -1,13 +1,15 @@
-import  './App.css' ;
-import { useState } from 'react';
+import  './main.css' ;
+import Menu from './menu';
+import { Component, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './counterSlice';
+import { Link } from 'react-router-dom';
 
 
 
-export default function App(){
-  const [number, setNumber] = useState(1);
+class Main extends Component {
 
+  render() {
   return(
   <div>
    <div id = "topcontainer">
@@ -16,32 +18,11 @@ export default function App(){
     </div>
 
     <div id = "menu-container">
-      <div>
-        <h1 >HOME |</h1>
-      </div>
-
-      <div>
-        <h1>COMMUNITY |</h1>
-      </div>
-
-      <div>
-        <h1>INFOMATION |</h1>
-      </div>
-      
-      <div>
-        <h1>COMMUNITY |</h1>
-      </div>
-      <div>
-        <h1>INSPECTION</h1>
-      </div>
-
-      <div>
-        <button>Log In</button>
-      </div>
+      <Menu/>
     </div>
   
    </div>
-   <div id = "middlecontainer">
+   <div id = "main-middlecontainer">
     <h1>HELLO</h1>
     <h1>반가워요.</h1>
     <h1>개발자들의 취업을 존중하고</h1>
@@ -50,7 +31,10 @@ export default function App(){
    </div>
   </div>
   );
+  }
 }
+
+export default Main;
  
  
 

@@ -1,12 +1,13 @@
-import  './App.css' ;
-import { useState } from 'react';
+import  './loginPage.css' ;
+import { Component, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './counterSlice';
+import Menu from './menu';
 
 
 
-export default function App(){
-  const [number, setNumber] = useState(1);
+class Loginpage extends Component {
+  render() {
 
   return(
   <div>
@@ -16,28 +17,7 @@ export default function App(){
     </div>
 
     <div id = "menu-container">
-      <div>
-        <h1 >HOME |</h1>
-      </div>
-
-      <div>
-        <h1>COMMUNITY |</h1>
-      </div>
-
-      <div>
-        <h1>INFOMATION |</h1>
-      </div>
-      
-      <div>
-        <h1>COMMUNITY |</h1>
-      </div>
-      <div>
-        <h1>INSPECTION</h1>
-      </div>
-
-      <div>
-        <button>Log In</button>
-      </div>
+      <Menu/>
     </div>
   
    </div>
@@ -92,7 +72,10 @@ export default function App(){
    </div>
   </div>
   );
+  }
 }
+
+export default Loginpage;
  
  
 
