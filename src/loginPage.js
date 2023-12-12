@@ -22,13 +22,13 @@ class Loginpage extends Component {
   
    </div>
    <div id = "middlecontainer">
-    <div id = "mainText">
+    <span id = "mainText">
      <h1>HELLO</h1>
      <h1>반가워요.</h1>
      <h1>개발자들의 취업을 존중하고</h1>
      <h1>개발자의 성장을 돕는</h1>
      <h1>개취존중입니다.</h1>
-    </div>
+    </span>
     <div id = "login">
      <div id = "loginTab">
       <div id = "loginMenu">
