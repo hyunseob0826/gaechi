@@ -22,13 +22,20 @@ class Main extends Component {
     </div>
   
    </div>
-   <div id = "main-middlecontainer">
+   <span id = "main-middlecontainer" >
     <h1>HELLO</h1>
     <h1>반가워요.</h1>
     <h1>개발자들의 취업을 존중하고</h1>
     <h1>개발자의 성장을 돕는</h1>
     <h1>개취존중입니다.</h1>
-   </div>
+   </span>
+   <span>
+
+   <img id='mainimg' src="main.PNG" alt="Main Image"  />
+
+   
+
+   </span>
   </div>
   );
   }
