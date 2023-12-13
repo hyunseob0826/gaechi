@@ -1,24 +1,23 @@
 import App from './App';
-import Loginpage from './loginPage';
-import Main from './main';
-import Community from './community';
-import Test211 from './Test211';
+import Login from './login/login';
+import Community from './communityLib/community';
 import {
     createBrowserRouter
 } from "react-router-dom";
-import Home from './appHome';
+import Main from './mainLib/main'
+import Information from './Information';
 
 
 
 const routes = createBrowserRouter([
     {
         path: "/",
-        element: <App/>,
+        element: <Main/>,
 
     },
     {
         path: "/loginpage",
-        element: <Loginpage/>
+        element: <Login/>
 
     },
     {
@@ -27,12 +26,9 @@ const routes = createBrowserRouter([
 
     },
     {
-        path: "/Test211",
-        element: <Test211/>
-    },
-    {
-        path: "/home",
-        element: <Home />
+        path: "/Information",
+        element: <Information/>
+
     },
 ]);
 
