@@ -21,14 +21,12 @@
  
   #menu-container{
     white-space: nowrap;
-   
     margin: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   
   #menu-container div{
-   
     margin-right: 20px;
   }
 
@@ -36,6 +34,10 @@
     display: flex;
     margin-top: 30px;
     font-size: 35px;
+  }
+  #username{
+    display: flex;
+    margin-top: 70px;
   }
   
   #menu-container div nav Link{
@@ -56,6 +58,7 @@
     margin-top: 150px;
     display: flex;
     flex-direction: column;
+    flex-direction: row;
    
    }
 
@@ -98,9 +101,8 @@
    }
   
    #loginMenu{
-  
     height: 80px;
-    width: 400px;
+    width: 100%;
    }
   
    #loginJoin{
@@ -111,15 +113,12 @@
   
    #loginJoin h1{
     text-align: center;
-    font-size: 40px;
-    padding-right: 30px;
+    font-size: 60px;
     padding-top: 5px;
    }
   
    #loginMenu h1{
     text-align: center;
-    font-size: 40px;
-    padding-right: 30px;
     padding-top: 5px;
    }
    #email{

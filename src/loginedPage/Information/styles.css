@@ -1,0 +1,208 @@
+/* styles.css */
+
+.Container0 {
+    background-color: #ced4da;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .SearchContainer {
+    background-color: white;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50px;
+    width: 350px;
+    border-radius: 50px;
+    box-shadow: 1.5px 3px 8px gray;
+  }
+  
+  .CtfContainer {
+    background-color: white;
+    border-radius: 15px;
+    margin: 30px 20px;
+    box-sizing: border-box;
+    /* max-width의 크기를 100%로 잡고 양,옆을 전체 화면에서 30px씩 마이너스 */
+    width: calc(100% - 30px);
+    max-width: 900px;
+    height: 480px;
+    /* 가로로 스크롤 가능하게 함*/
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2.5px 3px 7px gray;
+  }
+  
+  .CtfContainer:hover {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  
+  /* flex: 0: 남은 여백에 비례하여 성장하지 않게 함, 0: 축소되지 않게함,
+  auto: 요소의 초기 크기 */
+  .ContentCard {
+    flex: 0 0 auto;
+    background-color: lightgray;
+    border-radius: 15px;
+    width: 220px;
+    height: 380px;
+    margin-left: 40px;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 2.5px 3px 7px gray;
+  }
+  
+  .ContentCard::before {
+    content: '';
+    position: absolute;
+    top: 16%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(175, 175, 175);
+  }
+  
+  .ContentCard .title {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+    /* white-space: 자동 줄바꿈 방지 */
+    white-space: nowrap;
+  }
+  
+  .ContentCard .content {
+    position: absolute;
+    /* %는 .content부분을 위에서 35% 정도 내린다는 의미 다른 % 도 동일 */
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  
+  .Form {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+  }
+  
+  .Input {
+    border-radius: 5px;
+    border: 1.25px solid black;
+    height: 25px;
+  }
+  
+  .Button {
+    margin-left: auto;
+    border-radius: 7px;
+    border: 1.5px solid black;
+  }
+  
+
+/* ------ App.js 의 css------ */
+.Container {
+  background-color: #ced4da;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Form {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.Input1 {
+  margin-left: 60px;
+  border-radius: 5px;
+  border: 1.25px solid black;
+  height: 25px;
+}
+
+.Input2 {
+  margin-left: 20px;
+  border-radius: 5px;
+  border: 1.25px solid black;
+  height: 25px;
+}
+
+.Button {
+  margin-left: auto;
+  margin-right: 50px;
+  border-radius: 7px;
+  border: 1.5px solid black;
+}
+
+
+.MenuContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.MenuContainer > div {
+  margin-right: 50px;
+}
+
+.MenuContainer > div:last-child {
+  margin-right: 0;
+}
+
+
+.RectangleContainer {
+  background-color: white;
+  border-radius: 15px;
+  margin: 30px 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+  max-width: 800px;
+  height: 650px;
+  overflow: auto;
+  box-shadow: 2.5px 3px 7px gray;
+  /* 차례대로 수직, 수평, 음영, 음영 색 */
+}
+
+
+.ContentBox {
+  display: flex;
+  background-color: lightgray;
+  border-radius: 15px;
+  margin: 30px 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  box-shadow: 2.5px 3px 7px gray;
+}
+
+
+.Square {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+}
+
+
+.TextBox {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}

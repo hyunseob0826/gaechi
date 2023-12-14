@@ -1,17 +1,25 @@
 import  './main.css' ;
 import Menu from '../menu';
-import { Component, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
 
 export default function Mainpage(props) {
-   const [mode, setMode] = useState("");
-   console.log(mode);
+   const usernamees = props.username;
+   const [username, setUsername] = useState(usernamees);
 
 
-  
+   
+    let content = null;
+    
+      content = <><Menu/><div id='username'>
+        <h1>환영합니다 {username}님!</h1>
+      </div></>
+    
+    
+   
   return(
   <div>
    <div id = "topcontainer">
@@ -20,7 +28,7 @@ export default function Mainpage(props) {
     </div>
 
     <div id = "menu-container">
-      <Menu/>
+    {content}
     </div>
   
    </div>

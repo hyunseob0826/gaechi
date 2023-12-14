@@ -79,7 +79,7 @@
    }
   
    #loginMenu{
-   
+    
     height: 80px;
     width: 400px;
    }
@@ -91,6 +91,7 @@
    }
   
    #loginJoin h1{
+    
     text-align: center;
     font-size: 40px;
     padding-right: 30px;
@@ -117,6 +118,7 @@
    #emailText{
     width: 700px;
     height: 60px;
+    font-size: 40px;
    }
    #password{
     margin-top: 50px;
@@ -141,6 +143,7 @@
     font-size: 15px;
    }
    #passwordText{
+    font-size: 40px;
     width: 700px;
     height: 60px;
    }
@@ -154,6 +157,13 @@
     margin-top: 50px;
     width: 600px;
     height: 60px;
+   }
+
+   #btn{
+    margin-top: 25px;
+    width: 200px;
+    height: 60px;
+    font-size: 30px;
    }
    
   
