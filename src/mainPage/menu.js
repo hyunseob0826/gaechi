@@ -3,7 +3,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import './menu.css';
-import Dropdown from "./Dropdown";
+import Dropdown from '../Dropdown';
 
 const DropDown = props => {
     const [dropdownVisibility, setDropdownVisibility] = React.useState(false);
@@ -14,7 +14,7 @@ const DropDown = props => {
         <Link onClick = {e => setDropdownVisibility(!dropdownVisibility)}>COMMUNITY</Link>
         <Dropdown visibility = {dropdownVisibility}>
           <ul>
-            <li>1.스터디 모임 공고</li>
+            <li><Link to="/study">1.스터디 모임 공고</Link></li>
             <li><Link to="/Community">2.개발자 커뮤니티</Link></li>
           </ul>
         </Dropdown>
@@ -28,7 +28,6 @@ export default function Menu() {
         <nav id="menu">
             <div className="menu-item">
                 <Link to="/home">HOME</Link>
-                <Link to="/">HOME</Link>
             </div>
             <div className="menu-item">
                 <DropDown></DropDown>

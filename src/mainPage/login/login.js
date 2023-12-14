@@ -3,6 +3,7 @@ import { Component, useState, useEffect } from 'react';
 import Loginpage from './loginPage';
 import Main from '../Main/main';
 import Loginmain from '../../loginedPage/Main/mainPage';
+import Menu from '../menu';
 
 
 
@@ -37,6 +38,7 @@ export default function Login() {
     <>
       <div className="background">
         {content}
+        <Menu />
       </div>
     </>
   );

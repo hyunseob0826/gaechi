@@ -9,6 +9,8 @@ import Information from './mainPage/Infomation/Information';
 import LoginedInfromaion from'./loginedPage/Information/Information';
 import LoginedMain from './loginedPage/Main/main'
 import LoginedCommunity from './loginedPage/communityLib/community'
+import MeetupForm from './mainPage/communityLib/MeetupForm';
+import Home from './appHome';
 
 
 
@@ -53,6 +55,14 @@ const routes = createBrowserRouter([
         element: <LoginedInfromaion/>
 
     },
+    {
+        path: "/study",
+        element:<MeetupForm />
+    },
+    {
+        path: "/home",
+        element:<Home />
+    }
 ]);
 
 export default routes;
