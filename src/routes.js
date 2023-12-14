@@ -1,24 +1,26 @@
 import App from './App';
-import Loginpage from './loginPage';
-import Main from './main';
-import Community from './community';
-import Test211 from './Test211';
+import Login from './mainPage/login/login';
+import Community from './mainPage/communityLib/community';
 import {
     createBrowserRouter
 } from "react-router-dom";
-import Home from './appHome';
+import Main from './mainPage/Main/main'
+import Information from './mainPage/Infomation/Information';
+import LoginedInfromaion from'./loginedPage/Information/Information';
+import LoginedMain from './loginedPage/Main/main'
+import LoginedCommunity from './loginedPage/communityLib/community'
 
 
 
 const routes = createBrowserRouter([
     {
         path: "/",
-        element: <App/>,
+        element: <Main/>,
 
     },
     {
-        path: "/loginpage",
-        element: <Loginpage/>
+        path: "/login",
+        element: <Login/>
 
     },
     {
@@ -27,12 +29,29 @@ const routes = createBrowserRouter([
 
     },
     {
-        path: "/Test211",
-        element: <Test211/>
+        path: "/Information",
+        element: <Information/>
+
     },
     {
-        path: "/home",
-        element: <Home />
+        path: "/LoginedMain",
+        element: <LoginedMain/>,
+
+    },
+    {
+        path: "/Logout",
+        element: <Login/>
+
+    },
+    {
+        path: "/LoginedCommunity",
+        element: <LoginedCommunity/>
+
+    },
+    {
+        path: "/LofinedInformation",
+        element: <LoginedInfromaion/>
+
     },
 ]);
 
