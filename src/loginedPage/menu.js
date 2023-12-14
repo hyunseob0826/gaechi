@@ -4,25 +4,23 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './menu.css';
 
-const Menu = (props) => {
+export default function Menu() {
 
     return (
         <nav id="menu">
             <div className="menu-item">
-                <Link to="/">HOME</Link>
+                <Link to="/LoginedMain">HOME</Link>
             </div>
             <div className="menu-item">
-                <Link to="/Community">COMMUNITY</Link>
+                <Link to="/LoginedCommunity">COMMUNITY</Link>
             </div>
             <div className="menu-item">
-                <Link to="/Information">INFOMATION</Link>
+                <Link to="/LofinedInformation">INFOMATION</Link>
             </div>
             <div id="loginheader">
-                <Link to="/loginpage">LOGIN</Link>
-                <Link to="/mypage" className="my-page">MY PAGE</Link>
+                <Link to="/" className="my-page">LOGOUT</Link>
             </div>
         </nav>
     );
 }
 
-export default Menu;

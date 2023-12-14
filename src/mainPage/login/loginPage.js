@@ -8,7 +8,6 @@ import Login from './login';
 
 
 export default function Loginpage(props) {
-  const [mode, setMode] = useState("");
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   
@@ -34,13 +33,9 @@ export default function Loginpage(props) {
      <h1>개취존중입니다.</h1>
     </span>
     <div id = "login">
-     <div id = "loginTab">
       <div id = "loginMenu">
         <h1>로그인</h1>
-      </div>
-      <div id = "loginJoin">
-        <h1>회원가입</h1>
-      </div>
+
      </div>
 
      <div id = "email">
@@ -71,7 +66,7 @@ export default function Loginpage(props) {
        </div>
      </div>
      <div id = "loginButton">
-      <p><input type="submit" value="로그인" onClick={() => {
+      <p ><input id="btn" type="submit" value="로그인" onClick={() => {
         const userData = {
           userId: id,
           userPassword: password,
@@ -86,13 +81,15 @@ export default function Loginpage(props) {
           .then((res) => res.json())
           .then((json) => {            
             if(json.isLogin==="True"){
+              console.log(json)
               props.setMode("WELCOME");
+              props.setUsername(json.nickname)
             }
             else {
               alert(json.isLogin)
             }
           });
-      }} />로그인</p>
+      }} /></p>
      </div>
     </div>
    </div>

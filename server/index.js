@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session')
+const cookieParser = require('cookie-parser')
 const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
@@ -14,6 +15,7 @@ const db = mysql.createPool({
     user: "root",
     password: "0000",
     database: "simpleboard",
+    
 });
 
 app.use(cors());
@@ -28,40 +30,18 @@ app.use(session({
 	store: sessionStore,
 	resave: false,
 	saveUninitialized: false
+    
 }))
-app.get('/authcheck', (req, res) => {      
-    const sendData = { isLogin: "" };
-    if (req.session.is_logined) {
-        sendData.isLogin = "True"
-    } else {
-        sendData.isLogin = "False"
-    }
-    res.send(sendData);
-})
-
-app.get('/logout', function (req, res) {
-    req.session.destroy(function (err) {
-        res.redirect('/');
-    });
-});
-
-app.post("/loginsucces", (req, res) => {
-    const title = req.body.title;
-    const content = req.body.content;
-    const sqlQuery = "INSERT INTO simpleboard (title, content) VALUES (?,?)";
-    db.query(sqlQuery, [title, content], (err, result) => {
-        res.send('success!');
-    });
-});
 
 app.post("/login", (req, res) => { // 데이터 받아서 결과 전송
     const username = req.body.userId;
     const password = req.body.userPassword;
     const sendData = { isLogin: "",
-                       password: username };
+                       nickname: username };
 
 
-    if (username && password) {             // id와 pw가 입력되었는지 확인
+    if (username && password) {
+               // id와 pw가 입력되었는지 확인
         db.query('SELECT * FROM userTable WHERE username = ?', [username], function (error, results, fields) {
             if (error) throw error;
             if (results.length > 0) {       // db에서의 반환값이 있다 = 일치하는 아이디가 있다.      
@@ -69,10 +49,9 @@ app.post("/login", (req, res) => { // 데이터 받아서 결과 전송
 
                 bcrypt.compare(password , passowrdCheck, (err, result) => {    // 입력된 비밀번호가 해시된 저장값과 같은 값인지 비교
 
-                    console.log(result);
 
                     if (result === true) {                  // 비밀번호가 일치하면
-                        req.session.is_logined = true;      // 세션 정보 갱신
+                        req.session.is_logined = true;     // 세션 정보 갱신
                         req.session.nickname = username;
                         req.session.save(function () {
                             sendData.isLogin = "True"
@@ -96,6 +75,37 @@ app.post("/login", (req, res) => { // 데이터 받아서 결과 전송
         res.send(sendData);
     }
 });
+
+app.get('/authcheck', (req, res) => {      
+    const sendData = { isLogin: "" , nickname:"dd"};
+    const seisson_id = req.sessionID
+    if (req.session.isLogin) {
+        sendData.isLogin = "True"
+        sendData.nickname = req.session.nickname
+    } else {
+        sendData.isLogin = "False"
+    }
+    res.send(sendData);
+    console.log(req.session.is_logined)
+    console.log(sendData.isLogin)
+})
+
+app.get('/logout', function (req, res) {
+    req.session.destroy(function (err) {
+        res.redirect('/');
+    });
+});
+
+app.post("/loginsucces", (req, res) => {
+    const title = req.body.title;
+    const content = req.body.content;
+    const sqlQuery = "INSERT INTO simpleboard (title, content) VALUES (?,?)";
+    db.query(sqlQuery, [title, content], (err, result) => {
+        res.send('success!');
+    });
+});
+
+
 
 app.get("/api/get", (req, res)=> {
     const sqlQuery = "SELECT * FROM simpleboard;";
