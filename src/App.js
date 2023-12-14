@@ -7,8 +7,6 @@ import main from './main'
 import loginPage from './loginPage';
 
 
-
-
 export default function App(){
   return(
     <div className='App'>
@@ -21,7 +19,8 @@ export default function App(){
   )
 }
  
- 
+
+
 
   
 
