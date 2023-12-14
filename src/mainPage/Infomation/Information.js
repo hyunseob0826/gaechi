@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 import Menu from '../menu'
+import Ctf from '../Ctf';
 
 
 export default function Infomation() {

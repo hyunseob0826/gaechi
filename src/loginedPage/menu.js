@@ -17,6 +17,9 @@ export default function Menu() {
             <div className="menu-item">
                 <Link to="/LofinedInformation">INFOMATION</Link>
             </div>
+            <div className="menu-item">
+                <Link to="/LoginedInsfection">INSFECTION</Link>
+            </div>
             <div id="loginheader">
                 <Link to="/" className="my-page">LOGOUT</Link>
             </div>

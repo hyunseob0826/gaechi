@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 export default function Mainpage(props) {
-   const username = props.username;
    const [mode, setMode] = useState("");
 
 

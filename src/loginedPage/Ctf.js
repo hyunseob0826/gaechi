@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Menu from '../menu'
+import Menu from './menu'
 
 
 const Ctf = () => {
@@ -14,8 +14,15 @@ const Ctf = () => {
 
   return (
     <div className='Container0'>
+      <div id = "topcontainer">
+    <div id = "title">
+     <h1>개취존중</h1>
+    </div>
 
-      <Menu></Menu>
+    <div id = "menu-container">
+    <Menu></Menu>
+    </div>
+   </div>
 
       <div className='SearchContainer'>
         <form className="Form">

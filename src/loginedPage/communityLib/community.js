@@ -38,7 +38,7 @@ export default function Community() {
       ...writeContent,
       [name]: value
     })
-    console.log(writeContent)
+    console.log(writeContent+'dd')
   };// writeContent복사하기
   return(
   <div>
