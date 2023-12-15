@@ -1,6 +1,7 @@
 import App from './App';
 import Login from './mainPage/login/login';
 import Community from './mainPage/communityLib/community';
+import Insfection from './mainPage/Ctf'
 import {
     createBrowserRouter
 } from "react-router-dom";
@@ -9,6 +10,7 @@ import Information from './mainPage/Infomation/Information';
 import LoginedInfromaion from'./loginedPage/Information/Information';
 import LoginedMain from './loginedPage/Main/main'
 import LoginedCommunity from './loginedPage/communityLib/community'
+import LoginedInsfection from './loginedPage/Ctf'
 
 
 
@@ -34,13 +36,23 @@ const routes = createBrowserRouter([
 
     },
     {
+        path: "/Insfection",
+        element: <Insfection/>
+
+    },
+    {
         path: "/LoginedMain",
         element: <LoginedMain/>,
 
     },
     {
-        path: "/Logout",
+        path: "/Login",
         element: <Login/>
+
+    },
+    {
+        path: "/LoginedInsfection",
+        element: <LoginedInsfection/>
 
     },
     {

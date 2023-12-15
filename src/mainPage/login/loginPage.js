@@ -73,7 +73,7 @@ export default function Loginpage(props) {
         };
         fetch("http://localhost:8000/login", { //auth 주소에서 받을 예정
           method: "post", // method :통신방법
-          headers: {      // headers: API 응답에 대한 정보를 담음
+          headers: {       
             "content-type": "application/json",
           },
           body: JSON.stringify(userData), //userData라는 객체를 보냄
