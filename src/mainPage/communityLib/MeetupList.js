@@ -16,7 +16,7 @@ const MeetupList = ({meetups}) => {
                     </li>
                 ))}
             </ul>
-            <Menu />
+            <Menu></Menu>
         </div>
     );
 };

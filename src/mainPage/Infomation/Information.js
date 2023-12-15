@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 import Menu from '../menu'
+import { datalist } from '../../data';
 
 
 export default function Infomation() {
@@ -40,6 +41,8 @@ export default function Infomation() {
     console.log('Searching for:', searchKeyword2);
     // TODO: 기능 추가 예정
   };
+
+  console.log(datalist);
 
   return (
     <div className='Container'>
