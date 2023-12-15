@@ -166,63 +166,24 @@ export default function Infomation() {
       {/* 구인공고 들을 볼 수 있는 하얀색 창 */}
       <div className='RectangleContainer'>
         <div className='ContentBox'>
-          <div className='Square'>회사 로고</div>
-          <div className='TextBox'>
-            <div>
-              회사 이름: <br/>
-              회사 관련 내용<br/>
-            </div>
-          </div>
-        </div>
+          {
+            datalist.map((info)=>{
+              return(
+                <div className='MiniContainer'>
+                  <div className='Square'><img src={info.imgaddr}></img></div>
+                  <div className='TextBox'>
+                    <div>
+                      회사 이름: {info.name}<br/>
+                      {info.title}<br/>
+                    </div>
+                  </div>
+                </div>
 
-        <div className='ContentBox'>
-          <div className='Square'>회사 로고</div>
-          <div className='TextBox'>
-            <div>
-              회사 이름: <br/>
-              회사 관련 내용<br/>
-            </div>
-          </div>
-        </div>
+              );
+            })
+          }
+          
 
-        <div className='ContentBox'>
-          <div className='Square'>회사 로고</div>
-          <div className='TextBox'>
-            <div>
-              회사 이름: <br/>
-              회사 관련 내용<br/>
-            </div>
-          </div>
-        </div>
-
-        <div className='ContentBox'>
-          <div className='Square'>회사 로고</div>
-          <div className='TextBox'>
-            <div>
-              회사 이름: <br/>
-              회사 관련 내용<br/>
-            </div>
-          </div>
-        </div>
-
-        <div className='ContentBox'>
-          <div className='Square'>회사 로고</div>
-          <div className='TextBox'>
-            <div>
-              회사 이름: <br/>
-              회사 관련 내용<br/>
-            </div>
-          </div>
-        </div>
-
-        <div className='ContentBox'>
-          <div className='Square'>회사 로고</div>
-          <div className='TextBox'>
-            <div>
-              회사 이름: <br/>
-              회사 관련 내용<br/>
-            </div>
-          </div>
         </div>
 
       </div>
